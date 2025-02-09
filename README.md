@@ -1,2 +1,2 @@
 # Mezuniyet
-iklim değişikliği hakkında bilincinizi çlçen bir web site
+iklim değişikliği hakkında bilincinizi ölçen bir web site
