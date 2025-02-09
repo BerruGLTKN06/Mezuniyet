@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+  >
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../static/css/style.css"> 
+  <title>İklim değişikliği bilinçlendiricisi</title>
+</head>
+<body>
+  <header class="header">
+    <div class="header__text">
+      <h1>Ne kadar bilinçli olduğunuzu hesaplayın!</h1>
+      <p>Girişimde bulunun ve küresel iklim değişikliği sorununu çözün!</p>
+    </div>
+  </header>
+  <main>
+    {% block content %}
+    <h2 class="main__title main__title--margin">Bilinçlilik seviyeniz:</h2>
+    <div class="main__rez" id="end">
+        {%if result <= 150%}
+        <img class="rez__img" src="../../static/img/planet_good.svg" alt="">
+        <span>Sonucunuz {{result}} kWh</span>
+        <span>Eviniz enerji tüketimi konusunda son derece verimlidir!</span>
+        {%elif result > 150 and result < 300%}
+        <img class="rez__img" src="../../static/img/planet_medium.svg" alt="">
+        <span>Sonucunuz {{result}} kWh</span>
+        <span>Evınızın enerji verimliliği orta düzeydedir!</span>
+        <span>Evinizin enerji verimliliği ortalamadır. Dilerseniz size form gönderelim.</span>
+        <a href="/form" class="main__link">form!</a>
+        {%elif result >= 300%}
+        <img class="rez__img" src="../../static/img/planet_bad.svg" alt="">
+        <span>Sonucunuz {{result}} kWh</span>
+        <span>Evınızın enerji verimliliği ortalamadan düşüktür!</span>
+        <span>Evinizin enerji verimliliği düşüktür. Dilerseniz size form gönderelim.</span>
+        <a href="/form" class="main__link">form!</a>
+        {%endif%}
+    </div>
+    {% endblock %}
+  </main>
+  <footer>
+
+  </footer>
+</body>
+</html>
